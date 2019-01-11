@@ -1,16 +1,18 @@
+import Head from 'next/head';
 import Header from './Header';
+import Footer from './Footer';
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-}
 
 const Layout = function (props) {
   return(
-    <div style={layoutStyle}>
-    <Header />
-    { props.children }
+    <div>
+      <Head>
+        <title>DataToday</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css"></link>
+      </Head>
+      <Header />
+      { props.children }
+      <Footer />
     </div>
   );
 }

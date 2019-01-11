@@ -1,5 +1,6 @@
 import Layout from '../comps/Layout.js'
 import Link from 'next/link'
+import Header from '../comps/Header';
 
 function getPosts () {
   return [
@@ -16,13 +17,11 @@ const PostLink = ({ post }) => (
     </Link>
     <style jsx>{`
       li {
-        list-style: none;
         margin: 5px 0;
       }
 
       a {
         text-decoration: none;
-        color: blue;
         font-family: "Arial";
       }
 
@@ -33,23 +32,36 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-export default () => (
-  <Layout>
-    <h1>My Blog</h1>
-    <ul>
-      {getPosts().map((post) => (
-          <PostLink key={post.id} post={post}/>
-        ))}
-    </ul>
-    <style jsx>{`
-      h1, a {
-        font-family: "Arial";
-      }
+const indexStyle = {
+  margin: 20,
+  padding: 20,
+  border: '1px solid #DDD'
+}
 
-      ul {
-        padding: 0;
-      }
-    `}
-    </style>
-  </Layout>
+
+export default () => (
+  <div>
+    <Layout>
+      <div style={indexStyle}>
+        <h1>My Blog</h1>
+        <ul>
+          {getPosts().map((post) => (
+              <PostLink key={post.id} post={post}/>
+            ))}
+        </ul>
+        <button className="btn btn-primary">Button</button>
+        <style jsx>{`
+          h1, a {
+            font-family: "Arial";
+          }
+
+          ul {
+            padding: 0;
+          }
+        `}
+        </style>
+      </div>
+
+    </Layout>
+  </div>
 )
