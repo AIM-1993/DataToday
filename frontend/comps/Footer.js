@@ -9,6 +9,7 @@ const Footer = () => (
     {`
       footer {
         text-align: center;
+        margin-top: 15%;
       }
     `}
     </style>

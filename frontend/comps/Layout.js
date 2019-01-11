@@ -1,7 +1,13 @@
 import Head from 'next/head';
-import Header from './Header';
+import Navbar from './Navbar';
 import Footer from './Footer';
 
+
+const containerStyle = {
+  marginTop: '20px',
+  padding: 20,
+  border: '1px solid #DDD'
+}
 
 const Layout = function (props) {
   return(
@@ -10,8 +16,10 @@ const Layout = function (props) {
         <title>DataToday</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css"></link>
       </Head>
-      <Header />
-      { props.children }
+      <Navbar />
+      <div className="container" style={containerStyle}>
+        { props.children }
+      </div>
       <Footer />
     </div>
   );

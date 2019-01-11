@@ -1,23 +1,24 @@
 import Layout from '../comps/Layout.js'
 import Link from 'next/link'
-import Header from '../comps/Header';
+
 
 function getPosts () {
   return [
-    { id: 'hello-nextjs', title: 'Hello Next.js'},
-    { id: 'learn-nextjs', title: 'Learn Next.js is awesome'},
-    { id: 'deploy-nextjs', title: 'Deploy apps with ZEIT'},
+    { id: 'hello-nextjs', title: '安装'},
+    { id: 'learn-nextjs', title: '如何使用'},
+    { id: 'deploy-nextjs', title: '用ZEIT进行部署'},
   ]
 }
 
 const PostLink = ({ post }) => (
   <li>
     <Link as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
-      <a>{post.title}</a>
+      <a className="btn">{post.title}</a>
     </Link>
     <style jsx>{`
       li {
         margin: 5px 0;
+        list-style: none;
       }
 
       a {
@@ -32,29 +33,18 @@ const PostLink = ({ post }) => (
   </li>
 )
 
-const indexStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-}
-
-
 export default () => (
   <div>
     <Layout>
-      <div style={indexStyle}>
-        <h1>My Blog</h1>
-        <ul>
+      <div>
+        <h1 className="page-header">DataToday</h1>
+        <ul className="navbar navbar-expand">
           {getPosts().map((post) => (
               <PostLink key={post.id} post={post}/>
             ))}
         </ul>
-        <button className="btn btn-primary">Button</button>
+        <button className="btn btn-success">下载V1.0</button>
         <style jsx>{`
-          h1, a {
-            font-family: "Arial";
-          }
-
           ul {
             padding: 0;
           }

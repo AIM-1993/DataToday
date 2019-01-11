@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 
-const Header = () => (
-  <div id="navbar">
+const Navbar = () => (
+  <nav id="navbar" className="navbar navbar-expand-lg navbar-dark bg-primary">
     <Link href="/">
       <a>Home</a>
     </Link>
@@ -29,7 +29,7 @@ const Header = () => (
         }
       `}
     </style>
-  </div>
+  </nav>
 )
 
-export default Header
+export default Navbar
