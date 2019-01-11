@@ -43,6 +43,7 @@ export default () => (
               <PostLink key={post.id} post={post}/>
             ))}
         </ul>
+        <p className="text-muted">一款简易数据获取应用</p>
         <button className="btn btn-success">下载V1.0</button>
         <style jsx>{`
           ul {
@@ -51,7 +52,6 @@ export default () => (
         `}
         </style>
       </div>
-
     </Layout>
   </div>
 )

@@ -1,6 +1,5 @@
 import Link from 'next/link'
 
-
 const Navbar = () => (
   <nav id="navbar" className="navbar navbar-expand-lg navbar-dark bg-primary">
     <Link href="/">
