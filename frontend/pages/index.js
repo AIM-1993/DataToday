@@ -4,16 +4,16 @@ import Link from 'next/link'
 
 function getPosts () {
   return [
-    { id: 'hello-nextjs', title: '安装'},
-    { id: 'learn-nextjs', title: '如何使用'},
-    { id: 'deploy-nextjs', title: '用ZEIT进行部署'},
+    { id: '安装'},
+    { id: '如何使用'},
+    { id: '用ZEIT进行部署'},
   ]
 }
 
 const PostLink = ({ post }) => (
   <li>
-    <Link as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
-      <a className="btn">{post.title}</a>
+    <Link as={`/p/${post.id}`} href={`/post?title=${post.id}`}>
+      <a className="btn">{post.id}</a>
     </Link>
     <style jsx>{`
       li {
